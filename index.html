@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+	<head>
+		<script type='text/javascript'>
+		var timeout	= 500;
+		var closetimer	= 0;
+		var ddmenuitem	= 0;
+
+		function mopen(id)
+		{	
+			mcancelclosetime();
+	
+			if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+
+			ddmenuitem = document.getElementById(id);
+			ddmenuitem.style.visibility = 'visible';
+
+		}
+
+		function mclose()
+		{
+			if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+		}
+
+
+		function mclosetime()
+		{
+			closetimer = window.setTimeout(mclose, timeout);
+		}
+
+		function mcancelclosetime()
+		{
+			if(closetimer)
+			{
+				window.clearTimeout(closetimer);
+				closetimer = null;
+			}
+		}
+
+		document.onclick = mclose; 
+		</script>
+		<meta charset="utf-8">
+		<title>Mark's CV</title>
+		<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+	</head>
+	<body>
+		<header>
+		</header>
+		
+		<nav>
+		<ul class='dropdown'>
+			<li><a href='./index.html'>Home</a></li>
+			<li><a href="./details.html" 
+				onmouseover="mopen('m1')" 
+				onmouseout="mclosetime()">About Me</a>
+				<div id="m1" 
+					onmouseover="mcancelclosetime()" 
+					onmouseout="mclosetime()">
+				<a href="./details.html#pers">Personal Details</a>
+				<a href="./details.html#edu">Education</a>
+				<a href="./details.html#results">Exam Results</a>
+				<a href="./details.html#exp">Work Experience</a>
+				<a href="./details.html#quals">Qualifications and Achievements</a>
+				</div>
+			</li>
+			<li><a href="./hobbies.html" 
+				onmouseover="mopen('m2')" 
+				onmouseout="mclosetime()">Hobbies and interests</a>
+				<div id="m2" 
+					onmouseover="mcancelclosetime()" 
+					onmouseout="mclosetime()">
+				<a href="./media.html#hobbs">Hobbies</a>
+				<a href="./hobbies.html#ints">Interests</a>
+				<a href="./hobbies.html#inv">Involvements</a>
+				</div>
+			</li>
+			<li><a href="./contact.html" 
+				onmouseover="mopen('m3')" 
+				onmouseout="mclosetime()">Contact</a>
+				<div id="m3" 
+					onmouseover="mcancelclosetime()" 
+					onmouseout="mclosetime()">
+				<a href="./contact.html#dets">Contact Details</a>
+				<a href="./contact.html#feed">Give Feedback</a>
+				</div>
+		</ul>
+		<div style="clear:both"></div>
+		</nav>
+		
+		<div class="main">
+		
+		
+		</div>
+		<footer>
+		Mark Agnew's CV
+		</footer>
+	</body>
+<html>

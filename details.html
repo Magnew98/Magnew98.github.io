@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+	<head>
+		<script type='text/javascript'>
+		var timeout	= 500;
+		var closetimer	= 0;
+		var ddmenuitem	= 0;
+
+		function mopen(id)
+		{	
+			mcancelclosetime();
+	
+			if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+
+			ddmenuitem = document.getElementById(id);
+			ddmenuitem.style.visibility = 'visible';
+
+		}
+
+		function mclose()
+		{
+			if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+		}
+
+
+		function mclosetime()
+		{
+			closetimer = window.setTimeout(mclose, timeout);
+		}
+
+		function mcancelclosetime()
+		{
+			if(closetimer)
+			{
+				window.clearTimeout(closetimer);
+				closetimer = null;
+			}
+		}
+
+		document.onclick = mclose; 
+		</script>
+		<meta charset="utf-8">
+		<title>Mark's CV</title>
+		<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+	</head>
+	<body>
+		<header>
+		</header>
+		
+		<nav>
+		<ul class='dropdown'>
+			<li><a href='./index.html'>Home</a></li>
+			<li><a href="./details.html" 
+				onmouseover="mopen('m1')" 
+				onmouseout="mclosetime()">About Me</a>
+				<div id="m1" 
+					onmouseover="mcancelclosetime()" 
+					onmouseout="mclosetime()">
+				<a href="./details.html#pers">Personal Details</a>
+				<a href="./details.html#edu">Education</a>
+				<a href="./details.html#results">Exam Results</a>
+				<a href="./details.html#exp">Work Experience</a>
+				<a href="./details.html#quals">Qualifications and Achievements</a>
+				</div>
+			</li>
+			<li><a href="./hobbies.html" 
+				onmouseover="mopen('m2')" 
+				onmouseout="mclosetime()">Hobbies and interests</a>
+				<div id="m2" 
+					onmouseover="mcancelclosetime()" 
+					onmouseout="mclosetime()">
+				<a href="./media.html#hobbs">Hobbies</a>
+				<a href="./hobbies.html#ints">Interests</a>
+				<a href="./hobbies.html#inv">Involvements</a>
+				</div>
+			</li>
+			<li><a href="./contact.html" 
+				onmouseover="mopen('m3')" 
+				onmouseout="mclosetime()">Contact</a>
+				<div id="m3" 
+					onmouseover="mcancelclosetime()" 
+					onmouseout="mclosetime()">
+				<a href="./contact.html#dets">Contact Details</a>
+				<a href="./contact.html#feed">Give Feedback</a>
+				</div>
+		</ul>
+		<div style="clear:both"></div>
+		</nav>
+		
+		<div class="main">
+		
+			<h2>About Me</h2>
+			
+			<article>
+				<p>
+				Combosec comes with a wide range of feaures to ensure potimal security for your device.
+				look at some of our key features below:
+				</p>
+
+				<a name='pers'></a>
+				<h3>Personal Details</h3>
+				<p>
+					<span>
+					Name:               Mark Agnew
+					</span>
+				</p>
+				<br>
+				<br>
+				Address: 22 Knockcullen Park,
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Knocklyon,
+				<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dublin 16.
+				<br>
+				Date of Birth:  5/2/1998
+				Telephone:      Mobile: 0863064818
+								Home: 014934915
+				E-mail:         m.agnew98@gmail.com 
+
+				</p>
+
+
+				<a name='edu'></a>
+				<h3>Automatic Encryption</h3>
+				<p>
+				When this app is downloaded it will ask for permission to access your messages. 
+				Once it has access to your messages it will encrypt your previous and future messages. 
+				But not to worry as no one other than the appwill be able to read your messages. 
+				The app will even encrypt it so that programmers won't be able to read it aswell. 
+				his is to keep your messages as private as possible. Also if you are not comfortable with this 
+				feature you could always turn it off. 
+				</p>
+
+				<a name='results'></a>
+				<h3>Lock Apps</h3> 
+				<p>
+				This app will also give you the choice of locking selected apps. This was no one other 
+				than you can access the apps you've locked. The only two ways to unlock the selected app is to 
+				either enter your passcode or use finger recognition. Most of the phones today have this capability 
+				already built in to them 
+				</p>
+
+				<a name='exp'></a>
+				<h3>General Security</h3>
+				<p>
+				Apart from locking apps and encrypting messages, this app 
+				also handles general security. It is able to detect viruses and malware
+				and delete them. It also checks for spyware so that you are sure you are the only 
+				one with access to the information on your phone
+				</p>
+				
+				<a name='quals'></a>
+				<h3>Retina Scanner</h3>
+				<p>
+				An extra security benefit is also added when you pay an additional one euro. 
+				The extra security benefit is a 
+				retina scanner. With this feature instead of the basic number combination to 
+				unlock your phone and your apps, 
+				you will instead be able to unlock both phone and apps with your eye. 
+				This feature works by taking 10 pictures 
+				of your eye. It then takes notes of the features of your eye. 
+				To unlock your phone or apps, you simply have to take a picture of your eye. 
+				If it matches it will unlock.
+				</p>
+			</article>
+			
+			
+		
+		</div>
+		<footer>
+		Combosec securing you
+		</footer>
+	</body>
+<html>
