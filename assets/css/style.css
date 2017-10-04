@@ -68,4 +68,17 @@ body {
 	background-size: 100%;
 	background-attachment: fixed;
 }
+
+table.contact {
+  border: 0px solid #1C6EA4;
+  width: 200px;
+  text-align: left;
+  border-collapse: collapse;
+}
+table.contact td, table.contact th {
+  border: 0px solid #AAAAAA;
+  padding: 3px 2px;
+}
+table.contact tbody td {
+  font-size: 16px;
 }
